@@ -1,0 +1,86 @@
+/* gutter space */
+$gutterspace: (
+  "no": 0,
+  "xxs": 1px,
+  "xs": 3px,
+  "sm": 6px,
+  "md": 9px,
+  "lg": 12px,
+  "xl": 22px,
+);
+@each $breakName, $breakValue in $gutterspace {
+  .#{$breakName}-gutter.row {
+    margin-left: -$breakValue;
+    margin-right: -$breakValue;
+  }
+}
+@each $breakName, $breakValue in $gutterspace {
+  .#{$breakName}-container {
+    padding-left: $breakValue;
+    padding-right: $breakValue;
+  }
+}
+@each $breakName, $breakValue in $gutterspace {
+  .#{$breakName}-gutter > [class*="col-"] {
+    padding-left: $breakValue;
+    padding-right: $breakValue;
+  }
+}
+$spaceamounts: (
+  "no": 0,
+  "xxs": 1px,
+  "xs": 3px,
+  "sm": 6px,
+  "md": 9px,
+  "lg": 12px,
+  "xl": 22px,
+);
+$sides: (
+  "": "all",
+  "t": "top",
+  "b": "bottom",
+  "l": "left",
+  "r": "right",
+);
+@each $spaceName, $spaceValue in $spaceamounts {
+  @each $sideName, $slidValue in $sides {
+    @if $slidValue == "all" {
+      .p-#{$spaceName} {
+        padding: #{$spaceValue};
+      }
+    } @else {
+      .p-#{$sideName}-#{$spaceName} {
+        padding-#{$slidValue}: #{$spaceValue};
+      }
+    }
+  }
+}
+@each $spaceName, $spaceValue in $spaceamounts {
+  @each $sideName, $slidValue in $sides {
+    @if $slidValue == "all" {
+      .m-#{$spaceName} {
+        margin: #{$spaceValue};
+      }
+    } @else {
+      .m-#{$sideName}-#{$spaceName} {
+        margin-#{$slidValue}: #{$spaceValue};
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .left-col-50 {
+    max-width: $container-width/2;
+    margin-left: auto;
+    .block-padding{
+      padding-right:40px ;
+    }
+  }
+  .right-col-50 {
+    max-width: $container-width/2;
+    margin-right: auto;
+    .block-padding{
+      padding-left:40px ;
+    }
+  }
+}

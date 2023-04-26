@@ -1,0 +1,25 @@
+.service-list{
+  list-style: disc;
+  list-style-position: inside;
+}
+.service-content{
+  padding: 20px 0;
+  border-top: 1px solid #D8D8D8;
+}
+
+.outcomes-grap-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li{
+    padding: 10px 0;
+    span{
+      font-size: 32px;
+      font-weight: 500;
+      margin-right: 10px;
+      width: 80px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}

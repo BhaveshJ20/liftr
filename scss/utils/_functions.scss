@@ -1,0 +1,23 @@
+@mixin fluid-typography($minFont,$maxFont,$minBreakpoint,$maxBreakpoint) {
+    $maxLessOne: $maxBreakpoint - 1;
+    $avg: ($maxFont + $minFont) / 2;
+    font-size: #{$minFont}px;
+    @media (min-width: #{$minBreakpoint}px) and (max-width: #{$maxLessOne}px) {
+      font-size: #{$avg}px;
+      font-size: calc(#{$minFont}px + (#{$maxFont} - #{$minFont}) * (100vw - #{$minBreakpoint}px) / (#{$maxBreakpoint} - #{$minBreakpoint}))
+    }
+    @media (min-width: #{$maxBreakpoint}px) {
+      font-size: #{$maxFont}px;
+    }
+  }
+
+   // @include fluid-typography(30,60,300,1500);
+
+   @function headings($from:1, $to:6) {
+    @if $from == $to {
+        @return 'h#{$from}';
+    } @else {
+        @return 'h#{$from},' + headings($from+1, $to);
+    }
+}
+

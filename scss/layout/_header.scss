@@ -1,0 +1,294 @@
+.header {
+    padding: 15px 0;
+}
+.header-sticky {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    background-color: #fff;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.5s;
+}
+// .header-up {
+//     transform: translate3d(0, -100%, 0) !important;
+// }
+
+.nav-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    li {
+        display: inline-flex;
+        &:last-child {
+            padding-right: 0;
+        }
+
+        a.nav-link {
+            color: #000000;
+            font-size: 18px;
+            padding: 20px 40px;
+            height: 100%;
+            position: relative;
+            &:hover {
+                color: #0ee0e0;
+            }
+        }
+    }
+}
+
+
+
+/* Megamenu */
+
+.header-title {
+    margin-bottom: 30px;
+    h5 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 18px;
+    }
+}
+
+.col-megamenu .megamenu-title {
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    .icon-target {
+        margin-right: 15px;
+    }
+}
+
+.sub-menu {
+    padding-left: 16px;
+    li {
+        display: block;
+        a {
+            font-size: 15px;
+            font-weight: 400;
+            padding: 6px 0px;
+            display: block;
+        }
+    }
+}
+
+.has-megamenu > .dropdown-menu {
+    top: 200%;
+    transition: 0.3s all ease-in-out;
+}
+
+.has-megamenu:hover > .dropdown-menu {
+    display: block;
+    top: 100%;
+}
+
+.has-megamenu > .dropdown-toggle:active {
+    pointer-events: none;
+}
+
+.dropdown-toggle:after {
+    content: none;
+}
+
+@include media-breakpoint-up(md) {
+    .category-box-right {
+        border-left: solid 1px #e7e7e7;
+        padding-left: 30px;
+        margin-left: 30px;
+    }
+    .has-megamenu {
+        position: static !important;
+    }
+    .has-megamenu .megamenu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        top: 180%;
+        transform-origin: 0% 0%;
+    }
+
+    .has-megamenu:hover .megamenu {
+        transition: 0.3s;
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+    }
+
+    .megamenu {
+        border-color: #e0e0e0;
+        border-radius: 0;
+        box-shadow: 0 5px 20px rgba(233, 233, 233, 0.5);
+        left: 0;
+        margin: 0;
+        max-width: 100%;
+        padding: 30px 0;
+        right: 0;
+        width: 100%;
+    }
+    .has-megamenu {
+        .mega-dropdown:before,
+        .mega-dropdown:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            margin-top: 0;
+            top: 180%;
+            transform-origin: 0% 0%;
+        }
+        &:hover .mega-dropdown:before,
+        &:hover .mega-dropdown:after {
+            transition: 0.3s;
+            opacity: 1;
+            visibility: visible;
+            top: 81%;
+        }
+
+        &:hover .mega-dropdown:after {
+            top: calc(81% + 3px);
+        }
+
+        .mega-dropdown:before {
+            border-width: 19px;
+            border-color: transparent transparent #e0e0e0 transparent;
+            z-index: 1000;
+        }
+
+        .mega-dropdown:after {
+            border-width: 18px;
+            border-color: transparent transparent #ffffff transparent;
+            z-index: 1001;
+        }
+    }
+}
+@include media-breakpoint-down(md) {
+    // .noScroll{
+    //     overflow: hidden;
+    // }
+    .header {
+        padding: 20px 0;
+    }
+    .logo-brand .img-fluid {
+        max-height: 60px;
+        display: block;
+    }
+    .nav-menu {
+        display: block;
+        min-height: 100vh;
+        background-color: #fff;
+        padding: 10px 0;
+        overflow: auto;
+        li {
+            display: block;
+            transition: all 0.3s ease;
+            border-bottom: solid 1px #eeeeee;
+            a.nav-link {
+                font-size: 20px;
+                padding: 14px 20px;
+                display: block;
+                font-weight: 500;
+            }
+            .dropdown-menu {
+                position: relative;
+            }
+        }
+    }
+    .nav-menu-wrapper {
+        min-height: 100vh;
+        display: block;
+        margin-top: 80px;
+        position: fixed;
+        width: 100vw;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+        visibility: hidden;
+        transform: translateX(-100%);
+        background: #fff;
+        text-align: left;
+        &.open {
+            visibility: visible;
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .has-megamenu:hover > .dropdown-menu {
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+
+    .col-megamenu .megamenu-title {
+        margin-bottom: 10px;
+    }
+
+    .header-title {
+        display: none;
+    }
+
+    .col-megamenu {
+        margin-bottom: 15px;
+    }
+    .navbar-toggle {
+        padding: 0;
+        position: relative;
+        z-index: 999;
+        min-width: inherit;
+        border: none;
+        outline: 0 none!important;
+        box-shadow: none!important;
+        background-color: transparent;
+        &.active {
+            .icon-bar.bar-top {
+                @include transform(rotate(45deg));
+                top: 2px;
+                position: absolute;
+            }
+            .icon-bar.bar-middle {
+                @include transform(rotate(-45deg));
+                margin: 1px;
+                top: 0px;
+            }
+            .icon-bar.bar-bottom {
+                width: 0;
+            }
+        }
+    }
+    .navbar-toggle .icon-bar {
+        background-color: #000000;
+        display: block;
+        height: 3px;
+        position: relative;
+        width: 32px;
+        margin: 0;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background:#000000 ;
+        }
+        & + .icon-bar {
+            margin-top: 8px;
+        }
+    }
+  
+}

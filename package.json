@@ -1,0 +1,25 @@
+{
+  "name": "codemaven",
+  "version": "1.0.0",
+  "description": "codemaven ",
+  "main": "main",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "browser-sync": "^2.26.7",
+    "gulp-clean-css": "^4.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1",
+    "prettier": "2.2.1"
+  },
+  "scripts": {
+    "start": "serve"
+  },
+  "keywords": [
+    "codemaven"
+  ],
+  "author": "Maven.one",
+  "license": "ISC"
+}

@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/*
+Author: maven.one
+File: master scss file
+//---------- TABLE OF CONTENTS ----------//
+	* Navigation
+*/
+/*******************
+    1.base
+*******************/
+@import "base/base";
+/*******************
+    2.helper
+*******************/
+@import "helpers/helper";
+/*******************
+    3.themes
+*******************/
+@import "themes/theme";
+/*******************
+/*******************
+    3.layout
+*******************/
+@import "layout/layout";
+/*******************
+    4.component
+*******************/
+@import "components/component";
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  color: #000000;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #0ee0e0;
+}
+
+* {
+  outline: none !important;
+}
+
+section {
+  position: relative;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Aeonik";
+  font-weight: normal;
+  font-size: 18px;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.4;
+}

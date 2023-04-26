@@ -1,0 +1,113 @@
+
+.section-title {
+    position: relative;
+    margin-bottom: 10px;
+    #{headings(1,6)} {
+      margin: 0;
+      padding: 0;
+      display: block;
+      position: relative;
+    }
+    *.title-xl {
+      @include fluid-typography(38,62,320,1366);
+      font-weight: bold;
+    }
+    
+    *.title-lg {
+      @include fluid-typography(38,52,320,1366);
+      font-weight: normal;
+    }
+    
+    *.title-md {
+      @include fluid-typography(32,44,320,1366);
+    }
+    
+    *.title-sm {
+      font-size:32px;
+    }
+    
+    *.title-xs {
+      font-size: 21px;
+    }
+  }
+
+  .text-xl-extra {
+    font-size: 32px;
+    line-height: normal;
+   
+  }
+  
+  .text-lg-extra {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .font-weight-medium {
+    font-weight: 500;
+  }
+  
+  /* Color & Background Color */
+  
+  .text-primary {
+    color: #0EE0E0 !important;
+  }
+  
+  .text-dark {
+    color: #000000 !important;
+  }
+  .box-shadow-none {
+    box-shadow: none !important;
+  }
+  
+  /* Card */
+  
+  .card {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 5px 20px rgba(233, 233, 233, .5);
+    padding: 90px 60px 40px;
+  }
+  
+  /* Grid */
+  
+  .gutters-20, .card-deck {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  
+  .gutters-20>div {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  @media screen and (max-width: 991px) {
+  
+    .text-lg-extra {
+      font-size: 24px;
+    }
+    .text-xl-extra {
+      font-size: 40px;
+    }
+    .card {
+      padding: 40px 15px;
+    }
+    .section-title *.title-sm {
+      font-size: 30px;
+    }
+    .text-lg-extra {
+      font-size: 18px;
+    }
+    .text-xl-extra {
+      font-size: 22px;
+    }
+  }
+  
+
+  .fst-normal{
+    font-weight: normal !important;
+  }
+  .fst-light{
+    font-weight: 400 !important;
+  }
+  

@@ -1,0 +1,21 @@
+$primary-colors: (
+  "cerulean-blue": $cerulean-blue,
+  "light-silver": $light-silver,
+  "white": $white,
+  "grey-light": $grey-light,
+  "alabaster": $alabaster,
+  "polar": $polar,
+  "dark": $dark,
+  "primary": $primary,
+);
+@each $color-name, $color-code in $primary-colors {
+  .#{$color-name}-text {
+    color: $color-code;
+  }
+  .#{$color-name}-bg {
+    background: $color-code;
+  }
+  // .border-#{$color-name} {
+  //   border-color: $color-code;
+  // }
+}
